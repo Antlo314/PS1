@@ -3,9 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 
 const IMAGES = [
-  "https://lh3.googleusercontent.com/p/AF1QipMoqIL6ffLw_y5FwSuDam39HdVlmKV8spcZq_WC=s0",
-  "https://lh3.googleusercontent.com/p/AF1QipN_8RKDgAW50T03UVesHbqvKx1uoHOB-pWgYTdy=s0",
-  "https://lh3.googleusercontent.com/p/AF1QipM4e_lwZHMgnD_ECWx65SwitXcCZ98KeM_9GNH3=s0"
+  "/images/business_photos/tarot_reading_target.jpg",
+  "/images/business_photos/photo_2.jpg",
+  "/images/business_photos/photo_3.jpg"
 ];
 
 export default function HeroSection() {
