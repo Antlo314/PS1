@@ -11,27 +11,30 @@ const REVIEWS = [
 
 export default function ReviewsSection() {
   return (
-    <section className="py-24 px-6 relative" id="reviews">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">What Our Clients Say</h2>
-          <p className="text-amber-400 text-lg flex justify-center items-center gap-2">
-            <Star className="fill-amber-400" size={20} /> 5.0 Average rating on Google
+    <section className="relative min-h-screen bg-[#FAFAFA] text-black py-32 px-6 flex flex-col justify-center" id="reviews">
+      <div className="max-w-7xl mx-auto w-full">
+        <div className="text-center mb-20">
+          <h4 className="font-syne tracking-widest text-sm font-bold uppercase text-gray-400 mb-3">Welcome</h4>
+          <h2 className="font-syne text-5xl md:text-7xl font-extrabold text-[#3F1677] mb-6">WHAT OUR CUSTOMERS SAY</h2>
+          <p className="text-[#A855F7] text-xl flex justify-center items-center gap-3 font-bold">
+            <Star className="fill-[#A855F7] text-[#A855F7]" size={24} /> 5.0 Average rating on Google
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {REVIEWS.map((review, i) => (
-            <div key={i} className="glass-panel p-8 text-left hover:scale-[1.02] transition-transform duration-300">
-              <div className="flex text-amber-400 mb-4">
-                {[...Array(5)].map((_, j) => <Star key={j} className="fill-amber-400 w-5 h-5" />)}
+            <div key={i} className="bg-white p-10 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.06)] hover:-translate-y-2 transition-transform duration-300 border border-gray-100 flex flex-col justify-between">
+              <div>
+                <div className="flex gap-1 text-[#A855F7] mb-8">
+                  {[...Array(5)].map((_, j) => <Star key={j} className="fill-[#A855F7] text-[#A855F7] w-6 h-6" />)}
+                </div>
+                <p className="text-gray-700 mb-8 leading-relaxed font-medium text-lg">"{review.text}"</p>
               </div>
-              <p className="text-gray-200 mb-6 italic leading-relaxed">"{review.text}"</p>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-500 to-purple-800 flex items-center justify-center font-bold text-white">
+              <div className="flex items-center gap-4 mt-auto">
+                <div className="w-14 h-14 rounded-full bg-[#3F1677] flex items-center justify-center font-bold text-white text-2xl">
                   {review.name.charAt(0)}
                 </div>
-                <h4 className="font-semibold">{review.name}</h4>
+                <h4 className="font-bold text-xl">{review.name}</h4>
               </div>
             </div>
           ))}
