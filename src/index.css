@@ -1,25 +1,44 @@
 @import "tailwindcss";
-
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Acumin+Pro:wght@400;600&display=swap');
 
 @theme {
-  --color-brand-purple: #A855F7; /* Matched to vibrant screenshot */
+  --color-brand-purple: #3F1677;
+  --color-brand-lightpurple: #B87EE4;
   --color-brand-blue: #8eb8d4;
   --color-brand-beige: #e5d5c5;
 }
 
-body {
+body, html {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   color: #fff;
   background-color: #FAFAFA;
-  overflow-x: hidden;
   margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* We scroll the container instead */
 }
 
 h1, h2, h3, h4, h5, h6, .font-syne {
   font-family: 'Syne', sans-serif;
   font-weight: 800;
   text-transform: uppercase;
+}
+
+.snap-container {
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.snap-section {
+  scroll-snap-align: start;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
 }
 
 .diamond-star {
@@ -47,6 +66,7 @@ h1, h2, h3, h4, h5, h6, .font-syne {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  cursor: pointer;
 }
 .outline-button:hover {
   background: white;
